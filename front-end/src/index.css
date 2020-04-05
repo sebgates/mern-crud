@@ -11,6 +11,7 @@ body {
 
 .completed {
   text-decoration: line-through;
+  background: red;
 }
 
 code {
