@@ -1,1 +1,1 @@
-# mern-crud
+# A MERN CRUD application
