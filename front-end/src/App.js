@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import CreateTodo from "./components/create-record";
 import EditTodo from "./components/edit-record";
-import TodosList from "./components/record-list";
+import RecordList from "./components/record-list";
 
 class App extends Component {
   render() {
@@ -16,13 +16,13 @@ class App extends Component {
             <div className="collpase nav-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">Add Record</Link>
+                  <Link to="/create" className="btn btn-primary">Add Record</Link>
                 </li>
               </ul>
             </div>
           </nav>
 
-          <Route path="/" exact component={TodosList} />
+          <Route path="/" exact component={RecordList} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
         </div>

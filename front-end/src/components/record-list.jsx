@@ -2,18 +2,18 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const Todo = props => (
+const SingleRecord = props => (
     <tr>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_description}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_responsible}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
+        <td><button type="button" class="btn btn-danger">Delete</button></td>
         <td>
-            <Link to={"/edit/"+props.todo._id}>Edit</Link>
+            <Link to={"/edit/"+props.todo._id}><button type="button" class="btn btn-warning">Edit</button></Link>
         </td>
     </tr>
 )
 
-export default class TodosList extends Component {
+export default class RecordList extends Component {
 
     constructor(props) {
         super(props);
@@ -32,7 +32,7 @@ export default class TodosList extends Component {
 
     todoList() {
         return this.state.todos.map(function(currentTodo, i) {
-            return <Todo todo={currentTodo} key={i} />;
+            return <SingleRecord todo={currentTodo} key={i} />;
         });
     }
 
@@ -43,10 +43,10 @@ export default class TodosList extends Component {
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Responsible</th>
-                            <th>Priority</th>
-                            <th>Actions</th>
+                            <th>Item description</th>
+                            <th>Price</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
